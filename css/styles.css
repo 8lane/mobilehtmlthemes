@@ -131,7 +131,7 @@ input:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:fo
 	text-align:left;
 	width: 1024px;
 	margin: 65px auto 0;
-	padding-bottom: 25px;
+	padding-bottom: 5px;
 	box-shadow: 0px 1px 5px #000;
 	border-radius: 6px;
 }
@@ -141,8 +141,8 @@ input:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:fo
 	margin: 0 auto;
 }
 
-#header { margin: 30px 0 35px; float: left; width: 870px; position: relative; }
-#header h1 { background: url(../images/logo.png); height: 71px; width: 216px; float: left; margin-top: 7px; }
+#header { margin: 28px 0; float: left; width: 870px; position: relative; }
+#header h1 { background: url(../images/logo.png); height: 43px; width: 325px; float: left; margin-top: 7px; }
 #header h1 span{ display: none; }
 #header h1 a { 
     display: block;
@@ -162,7 +162,7 @@ input:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:fo
 /*==============================================================*/
 #nav { 
 	float: right;
-	margin: 25px 0 10px;
+	margin: 10px 0;
 }
 #nav li { 
 	float: left;
@@ -200,7 +200,7 @@ input:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:fo
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.09);
     color: #556571;
     text-shadow: 0 1px 0 #fff;
-	padding: 6px 13px 9px;
+	padding: 6px 20px 9px;
 	margin: 0 5px;
 
 	color: #444; 
@@ -242,7 +242,7 @@ input:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:fo
 	z-index: 0;
 }
 .feature .buttonWrap {
-	width: 356px;
+	width: 197px;
 	margin: 0 auto;
 	padding-top: 110px;
 }
@@ -645,6 +645,7 @@ label.error {
 
 
 #innerContent {
+	display: none;
 	float: left;
 	width: 100%;
 }
@@ -1109,7 +1110,6 @@ label.error {
 	-webkit-box-shadow: 0 -3px 6px rgba(0,0,0,0.1) inset, 0 1px 0 #fff inset;
 	width: 100%;
 	float: left;
-	margin-bottom: 25px;
 }
 
 .cta a {
@@ -2084,7 +2084,7 @@ float: right;
 	body {  font-size:0.8em;  }
 	.mainWidth { width: 96%; }
 
-	#header { margin: 26px 0 15px; }
+	#header { margin: 28px 0; }
 	#nav { clear: both; float: left; }
 	#nav li a, #nav li.active a { padding: 6px 8px 7px; }
 		
