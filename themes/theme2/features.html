@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tom Christian - FRONT-END WEB DEVELOPER</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/styles.css" media="screen" />
+<link rel="stylesheet" href="css/mobile.css" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="js/jquery.mobile-1.0rc2.js"></script>
+
+<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.3.min.js"></script>
+<script type="text/javascript">
+
+// PhotoSwipe
+/*
+	IMPORTANT!!!
+	REMEMBER TO ADD  rel="external"  to your anchor tags. 
+	If you don't this will mess with how jQuery Mobile works
+*/
+(function(window, $, PhotoSwipe){
+	
+	$(document).ready(function(){
+		
+		$('div.portfolioPage, div.portfolioPage')
+			.live('pageshow', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					options = {},
+					photoSwipeInstance = $("#Gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+					
+				return true;
+				
+			})
+			
+			.live('pagehide', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+				if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+					PhotoSwipe.detatch(photoSwipeInstance);
+				}
+				
+				return true;
+				
+			});
+		
+	});
+
+}(window, window.jQuery, window.Code.PhotoSwipe));
+	
+</script>
+</head>
+<body>
+<div data-role="page" class="portfolioPage" data-theme="a">
+        <div data-role="header" data-theme="a">
+            <h1>Features</h1>
+			<a href="index.html" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left jqm-home">Back</a>
+        </div>
+        <div id="content" data-role="content">
+
+			<h2>Collapsible Content</h2>	
+			<div data-role="collapsible" data-theme="b" data-content-theme="a">
+			   <h3>Header A</h3>
+			   <p>I'm the collapsible content with a themed content block set to "A".</p>
+			</div>		
+
+			<br />
+			<h2>Accordions</h2>		
+			<div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+				<div data-role="collapsible" data-collapsed="false">
+				<h3>Section 1</h3>
+				<p>I'm the collapsible set content for section 1.</p>
+				</div>
+				<div data-role="collapsible">
+				<h3>Section 2</h3>
+				<p>I'm the collapsible set content for section 2.</p>
+				</div>
+				<div data-role="collapsible">
+				<h3>Section 3</h3>
+				<p>I'm the collapsible set content for section 3.</p>
+				</div>	
+				<div data-role="collapsible">
+				<h3>Section 4</h3>
+				<p>I'm the collapsible set content for section 4.</p>
+				</div>
+			</div>	
+			<br />
+			
+			<h2>Slideshow</h2>
+			<ul id="Gallery" class="gallery">
+				<li><a href="images/full/001.jpg" rel="external"><img src="images/thumb/001.jpg" alt="Image 001" /></a></li>
+				<li><a href="images/full/002.jpg" rel="external"><img src="images/thumb/002.jpg" alt="Image 002" /></a></li>
+				<li><a href="images/full/003.jpg" rel="external"><img src="images/thumb/003.jpg" alt="Image 003" /></a></li>
+			</ul>
+			<br />
+		
+
+
+        </div>
+		<div class="ui-footer" data-role="footer" data-theme="a">
+				<p>&copy; 2011 The jQuery Project</p>
+		</div>				
+    </div>
+</body>
+</html>

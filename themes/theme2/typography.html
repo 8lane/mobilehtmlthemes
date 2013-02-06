@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tom Christian - FRONT-END WEB DEVELOPER</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/styles.css" media="screen" />
+<link rel="stylesheet" href="css/mobile.css" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="js/jquery.mobile-1.0rc2.js"></script>
+
+<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.3.min.js"></script>
+<script type="text/javascript">
+
+// PhotoSwipe
+/*
+	IMPORTANT!!!
+	REMEMBER TO ADD  rel="external"  to your anchor tags. 
+	If you don't this will mess with how jQuery Mobile works
+*/
+(function(window, $, PhotoSwipe){
+	
+	$(document).ready(function(){
+		
+		$('div.portfolioPage, div.portfolioPage')
+			.live('pageshow', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					options = {},
+					photoSwipeInstance = $("#Gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+					
+				return true;
+				
+			})
+			
+			.live('pagehide', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+				if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+					PhotoSwipe.detatch(photoSwipeInstance);
+				}
+				
+				return true;
+				
+			});
+		
+	});
+
+}(window, window.jQuery, window.Code.PhotoSwipe));
+	
+</script>
+</head>
+<body>
+    <div data-role="page" class="typographyPage" data-theme="a">
+        <div data-role="header" data-theme="a">
+            <h1>Typography &amp; Layout</h1>
+			<a href="index.html" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left jqm-home">Back</a>
+        </div>
+        <div id="content" data-role="content">
+
+		<h2>Default HTML markup styling</h2>
+		<p>By default, jQuery Mobile themes use standard HTML styles and sizes for standard markup elements like headers, paragraph content, block quotes, anchor links, standard ordered, unordered and definition lists, and tables &mdash; as shown in the examples below:</p>
+		<hr>
+		
+		<h1>H1 Heading</h1>
+		<h2>H2 Heading</h2>
+		<h3>H3 Heading</h3>
+		<h4>H4 Heading</h4>
+		<h5>H5 Heading</h5>
+		<h6>H6 Heading</h6>
+		
+		<p>This is a paragraph that contains <strong>strong</strong>, <em>emphasized</em> and <a href="index.html" class="ui-link">linked</a> text. Here is more text so you can see how HTML markup works in content. Here is more text so you can see how HTML markup works in content.</p>
+		
+		<blockquote>How about some blockquote action with a <cite>cite</cite></blockquote>
+		
+		<p>We add a few styles to <code>tables</code> and <code>fieldsets</code> to make them more legible, which are easily overridden with customs styles.</p>
+		
+		<ul>
+			<li>Unordered list item 1</li>
+			<li>Unordered list item 1</li>
+			<li>Unordered list item 1</li>
+		</ul>
+		
+		<ol>
+			<li>Ordered list item 1</li>
+			<li>Ordered list item 1</li>
+			<li>Ordered list item 1</li>
+		</ol>
+		
+		<dl title="Definition list">
+			<dt>Definition term</dt>
+			<dd>I'm the definition text</dd>
+			<dt>Definition term</dt>
+			<dd>I'm the definition text</dd>
+		</dl>
+
+
+
+		<table summary="This table lists all the JetBlue flights.">
+		  <caption>Travel Itinerary</caption>
+		  <thead>
+		    <tr>
+		       <th scope="col">Flight:</th>  
+		      <th scope="col">From:</th>  
+		      <th scope="col">To:</th>  
+		    </tr>
+		  </thead>
+		  <tfoot>
+		    <tr>
+		      <td colspan="5">Total: 3 flights</td>
+		    </tr>
+		  </tfoot>
+		  <tbody>
+		  <tr>
+		    <th scope="row">JetBlue 983</th>
+		    <td>Boston (BOS)</td>
+		    <td>New York (JFK)</td>
+		  </tr>
+		  <tr>
+		    <th scope="row">JetBlue 354</th>
+		    <td>San Francisco (SFO)</td>
+		    <td>Los Angeles (LAX)</td>
+		  </tr>
+		<tr>
+		    <th scope="row">JetBlue 465</th>
+		    <td>New York (JFK)</td>
+		    <td>Portland (PDX)</td>
+		  </tr>
+		  </tbody>
+		</table>
+	
+			<h2>Grids</h2>
+			<h3>Two Column Grids</h3>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><div style="height:120px" class="ui-bar ui-bar-e">Block A</div></div>
+				<div class="ui-block-b"><div style="height:120px" class="ui-bar ui-bar-e">Block B</div></div>
+			</div>
+			<br />
+
+			<h3>Three Column Grids</h3>
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><div style="height:120px" class="ui-bar ui-bar-e">Block A</div></div>
+				<div class="ui-block-b"><div style="height:120px" class="ui-bar ui-bar-e">Block B</div></div>
+				<div class="ui-block-c"><div style="height:120px" class="ui-bar ui-bar-e">Block C</div></div>
+			</div>
+			<br />
+
+			<h3>Four Column Grids</h3>
+			<div class="ui-grid-c">
+				<div class="ui-block-a"><div style="height:120px" class="ui-bar ui-bar-e">A</div></div>
+				<div class="ui-block-b"><div style="height:120px" class="ui-bar ui-bar-e">B</div></div>
+				<div class="ui-block-c"><div style="height:120px" class="ui-bar ui-bar-e">C</div></div>
+				<div class="ui-block-d"><div style="height:120px" class="ui-bar ui-bar-e">D</div></div>
+			</div>
+			<br />
+
+			<h3>Five Column Grids</h3>
+			<div class="ui-grid-d">
+				<div class="ui-block-a"><div style="height:120px" class="ui-bar ui-bar-e">A</div></div>
+				<div class="ui-block-b"><div style="height:120px" class="ui-bar ui-bar-e">B</div></div>
+				<div class="ui-block-c"><div style="height:120px" class="ui-bar ui-bar-e">C</div></div>
+				<div class="ui-block-d"><div style="height:120px" class="ui-bar ui-bar-e">D</div></div>
+				<div class="ui-block-e"><div style="height:120px" class="ui-bar ui-bar-e">E</div></div>
+			</div>
+			<br />
+
+			<h3>Multiple Row Grids</h3>
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><div style="height:120px" class="ui-bar ui-bar-e">A</div></div>
+				<div class="ui-block-b"><div style="height:120px" class="ui-bar ui-bar-e">B</div></div>
+				<div class="ui-block-c"><div style="height:120px" class="ui-bar ui-bar-e">C</div></div>
+				<div class="ui-block-a"><div style="height:120px" class="ui-bar ui-bar-e">A</div></div>
+				<div class="ui-block-b"><div style="height:120px" class="ui-bar ui-bar-e">B</div></div>
+				<div class="ui-block-c"><div style="height:120px" class="ui-bar ui-bar-e">C</div></div>
+			</div>
+			<br />
+
+			<h3>Grids with buttons</h3>
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><button type="submit" data-theme="c">Cancel</button></div>
+				<div class="ui-block-b"><button type="submit" data-theme="b">Submit</button></div>	   
+			</fieldset>	
+
+			<br />
+
+			<fieldset class="ui-grid-b">
+					<div class="ui-block-a"><div data-theme="c" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c" aria-disabled="false"><span aria-hidden="true" class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Hmm</span></span></div></div>
+					<div class="ui-block-b"><div data-theme="a" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-a" aria-disabled="false"><span aria-hidden="true" class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">No</span></span></div></div>	 
+					<div class="ui-block-b"><div data-theme="b" class="ui-btn ui-btn-up-b ui-btn-corner-all ui-shadow" aria-disabled="false"><span aria-hidden="true" class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Yes</span></span></div></div>  
+			</fieldset>	
+        </div>
+		<div class="ui-footer" data-role="footer" data-theme="a">
+				<p>&copy; 2011 The jQuery Project</p>
+		</div>				
+    </div>
+</body>
+</html>

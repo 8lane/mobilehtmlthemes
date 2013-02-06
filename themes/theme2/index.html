@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tom Christian - FRONT-END WEB DEVELOPER</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-Equiv="Cache-Control" Content="no-cache">
+<meta http-Equiv="Pragma" Content="no-cache">
+<meta http-Equiv="Expires" Content="0">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/styles.css" media="screen" />
+<link rel="stylesheet" href="css/mobile.css" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.3.min.js"></script>
+<script type="text/javascript">
+
+// PhotoSwipe
+/*
+	IMPORTANT!!!
+	REMEMBER TO ADD  rel="external"  to your anchor tags. 
+	If you don't this will mess with how jQuery Mobile works
+*/
+(function(window, $, PhotoSwipe){
+	
+	$(document).ready(function(){
+		
+		$('div.portfolioPage, div.portfolioPage')
+			.live('pageshow', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					options = {},
+					photoSwipeInstance = $("#Gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+					
+				return true;
+				
+			})
+			
+			.live('pagehide', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+				if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+					PhotoSwipe.detatch(photoSwipeInstance);
+				}
+				
+				return true;
+				
+			});
+		
+	});
+
+}(window, window.jQuery, window.Code.PhotoSwipe));
+	
+</script>
+</head>
+<body>
+<div data-role="page" class="type-home" data-theme="a">
+	<div id="jqm-homeheader">
+		<h1 class="t1Title"><a href="index.html">My Website</a></h1>
+		<p class="t1Desc">Welcome to my website!</p>
+	</div>
+	<div data-role="content">
+		<nav>
+			<ul data-role="listview" data-inset="true" data-theme="a">			
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<section id="content" class="contentHomePage">
+			<h3>Welcome to section one</h3>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+			<h3>Welcome to section two</h3>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+			<h3>Welcome to section three</h3>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+		</section>
+	</div>
+	<div class="ui-footer" data-role="footer" data-theme="a">
+			<p class="copy">&copy; <a href="http://tomchristian.co.uk">Tom Christian</a> </p>
+			<p class="social">&copy; <a href="http://tomchristian.co.uk">Tom Christian</a> </p>
+	</div>	
+</div>
+</body>
+</html>

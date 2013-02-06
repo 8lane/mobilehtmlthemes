@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>eewr - werwer</title>
+
+<!-- META -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/mobile.css" />
+<!--iframe_css--> <link rel="stylesheet" href="css/iframe.css" media="screen" /> <!--/iframe_css-->
+<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+
+<!-- Javascript -->
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.mobile-1.1.0-rc.1.min.js"></script>
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.3.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+(function(window, $, PhotoSwipe){
+	
+	$(document).ready(function(){
+		
+		$('div.portfolioPage, div.portfolioPage')
+			.live('pageshow', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					options = {},
+					photoSwipeInstance = $("#Gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+					
+				return true;
+				
+			})
+			
+			.live('pagehide', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+				if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+					PhotoSwipe.detatch(photoSwipeInstance);
+				}
+				
+				return true;
+				
+			});	
+	});
+
+}(window, window.jQuery, window.Code.PhotoSwipe));
+</script>
+</head>
+<body>
+<div class="bgImg"></div>
+<div data-role="page" id="pageIndex" class="type-home" data-theme="a">
+	
+	<div id="jqm-homeheader">
+		<h1 class="t1Title" id="jqm-logo">eewr</h1>
+		<p class="t1Desc">werwer</p>
+	</div>
+	<div data-role="content">
+		<nav>
+			<ul id="navMenu" data-role="listview" data-inset="true" data-theme="a">	
+				<li><a href="about.html">About</a></li>			
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+				<!--facebookUrl-->  <!--/facebookUrl-->
+				<!--twitterUrl-->  <!--/twitterUrl-->
+				<!--googleUrl-->  <!--/googleUrl-->
+			</ul>
+		</nav>
+	</div>
+	<!--homepageContent--> <section id="content" class="contentHomePage"><p></p><h3>Test H3</h3>This is some sample text to test out the <b>WYSIWYG Control</b>.<p></p></section> <!--/homepageContent-->	
+	<div class="ui-footer mhtFooter" data-role="footer" data-theme="a">
+			<p class="copy">&copy; eewr</p>
+			<!--copyrightMht-->  <!--/copyrightMht-->
+	</div>	
+	<!--viewFullSite--> <p class="full_v"><a href=" http://test.com ">View Full Site &rarr;</a></p> <!--/viewFullSite-->
+</div>
+<!--addTracking-->  <!--/addTracking-->	
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+.ui-btn-icon-left .ui-btn-inner {
+	padding-left: 22px !important;
+	padding-right: 9px !important;
+	font-size: 12px !important;
+}
+
+.ui-btn-icon-left .ui-icon {
+	left: 4px !important;
+}
+
+#pageGallery #content { overflow: hidden !important; }
+#pageIndex { min-height: 0 !important; }
+.ui-mobile, .ui-mobile .ui-page { min-height: 0 !important; }

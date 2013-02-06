@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tom Christian - FRONT-END WEB DEVELOPER</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/styles.css" media="screen" />
+<link rel="stylesheet" href="css/mobile.css" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="js/jquery.mobile-1.0rc2.js"></script>
+
+<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.3.min.js"></script>
+<script type="text/javascript">
+
+// PhotoSwipe
+/*
+	IMPORTANT!!!
+	REMEMBER TO ADD  rel="external"  to your anchor tags. 
+	If you don't this will mess with how jQuery Mobile works
+*/
+(function(window, $, PhotoSwipe){
+	
+	$(document).ready(function(){
+		
+		$('div.portfolioPage, div.portfolioPage')
+			.live('pageshow', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					options = {},
+					photoSwipeInstance = $("#Gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+					
+				return true;
+				
+			})
+			
+			.live('pagehide', function(e){
+				
+				var 
+					currentPage = $(e.target),
+					photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+				if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+					PhotoSwipe.detatch(photoSwipeInstance);
+				}
+				
+				return true;
+				
+			});
+		
+	});
+
+}(window, window.jQuery, window.Code.PhotoSwipe));
+	
+</script>
+</head>
+<body>
+    <div data-role="page" class="typographyPage" data-theme="a">
+        <div data-role="header" data-theme="a">
+            <h1>Typography &amp; Layout</h1>
+			<a href="index.html" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left jqm-home">Back</a>
+        </div>
+        <div id="content" data-role="content">
+
+			<div>
+			  <h1>Contact</h1>
+			  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+			</div>
+			<div id="contact-block">
+				<form id="sendEmail" method="post" action="/contact.php">
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br"> 
+					   <label for="emailFrom" class="ui-input-text">Email: *</label>
+					   <input type="text" value="" id="emailFrom" name="emailFrom" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-b">
+					 </div>
+							  <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+					   <label for="subject" class="ui-input-text">Name: *</label>
+					   <input type="text" value="" id="subject" name="subject" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-b">         </div>
+					 <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+					   <label for="message" class="ui-input-text">Message: *</label>
+					   <textarea id="message" name="message" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-b"></textarea>         </div>
+					 <div class="formbutton ui-field-contain ui-body ui-br" data-role="fieldcontain">
+					   <div data-theme="b" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-down-a ui-btn-up-a" aria-disabled="false"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Send</span></span></div>
+					   <input type="hidden" data-theme="b" value="true" id="submitted" name="submitted">
+					 </div>
+					  <p>* All fields are required</p>
+				</form>
+				<div class="clearing"></div>
+			</div>
+        </div>
+		<div class="ui-footer" data-role="footer" data-theme="a">
+				<p>&copy; 2011 The jQuery Project</p>
+		</div>				
+    </div>
+</body>
+</html>
