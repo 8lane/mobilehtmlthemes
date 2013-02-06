@@ -46,7 +46,6 @@
 		<div class="featureBanner"></div>
 		<div class="featureBannerHover">
 			<div class="buttonWrap">
-				<a href="#features">Features <span class="icon"></span></a>
 				<a href="#" class="pop">Generate Now! <span class="icon"></span></a>		
 			</div>
 		</div>
@@ -64,8 +63,8 @@
 	<div class="introBox mainWidth">	
 		<div class="messageWrap">
 			<p class="message">
-				Mobile HTML Themes offers a simple and free service that allows you to build your very own mobile website, whether you're a business owner with no coding experience or a professional web designer.
-			</p>
+			Mobile HTML Themes is a final year University project by <a href="http://tomchristian.co.uk" target="_blank">Tom Christian</a>. The purpose of Mobile HTML Themes is to build, customise and download mobile compatible websites built upon the jQuery Mobile Framework.
+						</p>
 			<img src="images/featureDevice.jpg" alt="Compatible devices" title="Compatible with all modern smart phones!" class="toolTipTop deviceList" />
 		</div>	
 	</div>
@@ -112,30 +111,7 @@
 							</li>							
 						</ul>
 						<div id="innerBottom">
-							<div class="liveDemo clearfix">
-								<h3>Live Example</h3>
-								<div class="ipadFrame demoPop" rel="theme1">
-									<span class="ipadCover"></span>
-									<img src="images/liveDemoImg.jpg" alt="View a Live Demo" />
-								</div>
-							</div>
-							<div class="templates clearfix">
-								<h3>Templates</h3>
-								<ul>
-									<li>
-										<a href="#" class="demoPop" rel="theme1"><span class="template overlay" alt="View Overlay Theme Demo"></span></a>
-										<h4>Overlay <span class="desc"><a href="#" class="demoPop" rel="theme1">View Live Demo &rarr;</a></span></h4>
-									</li>
-									<li>
-										<a href="#" class="demoPop" rel="theme2"><span class="template wood" alt="View Wood Theme Demo"></span></a>
-										<h4>Wood <span class="desc"><a href="#" class="demoPop" rel="theme2">View Live Demo &rarr;</a></span></h4>
-									</li>							
-								</ul>
-							</div>
-							<div class="generate clearfix">
-								<h3>Generate</h3>
-								<a href="#" class="pop">Create Your Mobile Site &rarr;</a>
-							</div>						
+		
 						</div>							
 					</div>
 
@@ -164,24 +140,11 @@
 						</div>
 					</div>
 
-					<div class="demoPopUp hide">
-						<div class="close"></div>
-						<div class="inner">
-							<div class="liveDemoHandInside">
-								<div class="liveDemoFrame">
-								</div>
-							</div>							
-						</div>
-					</div>
-
 					<div class="popUpAbout hide">
 						<div class="close"></div>
 						<div class="inner">
 							<h3 id="go" class="title">About Mobile HTML Themes...</h3>
 							<p class="desc">Mobile HTML Themes was created by <a target="_blank" href="http://tomchristian.co.uk">Tom Christian</a> for a final year University project. Follow me on <a target="_blank" href="http://twitter.com/tomchristian91">twitter &rarr;</a></p>
-
-							<p><strong>Note:</strong> This site is a work in progress and I'd greatly appreciate it if you could report any issues to me via <a target="_blank" href="http://twitter.com/tomchristian91">twitter</a> or my <a target="_blank" href="http://tomchristian.co.uk">website</a>. I'm aiming to launch a BETA version within the next few weeks!</p>
-
 						</div>
 					</div>					
 					
@@ -197,13 +160,12 @@
 <div id="footer">
 	<div class="ftrLinksLeft">
 		<ul>
-			<li><a href="<?php echo ''.BASE_PATH.''; ?>/">Home</a></li>
-			<li><a href="#" class="popAbout">About</a></li>
+			<li><a href="http://tomchristian.co.uk">Final year university project created by Tom Christian.</a></li>
 		</ul>
 	</div>
 	<div class="ftrBackToTop"><a href="#top" class="backToTop"></a></div>
 	<div class="ftrLinksRight">
-		<p><a href="http://tomchristian.co.uk">Mobile HTML Themes &copy; 2012</a></p>	
+		<p><a href="http://tomchristian.co.uk">Mobile HTML Themes &copy; 2012 - 2013</a></p>	
 	</div>
 </div>
 <?php
