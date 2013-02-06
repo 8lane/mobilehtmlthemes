@@ -430,13 +430,12 @@ var redirectagent=navigator.userAgent.toLowerCase();var redirect_devices=["vnd.w
 <div id="footer">
 	<div class="ftrLinksLeft">
 		<ul>
-			<li><a href="<?php echo ''.BASE_PATH.''; ?>/">Home</a></li>
-			<li><a href="#" class="popAbout">About</a></li>
+			<li><a href="http://tomchristian.co.uk">Final year university project created by Tom Christian.</a></li>
 		</ul>
 	</div>
 	<div class="ftrBackToTop"><a href="#top" class="backToTop"></a></div>
 	<div class="ftrLinksRight">
-		<p><a href="http://tomchristian.co.uk">Mobile HTML Themes &copy; 2012</a></p>		
+		<p><a href="http://tomchristian.co.uk">Mobile HTML Themes &copy; 2012 - 2013</a></p>	
 	</div>
 </div>
 <?php echo '<input id="userEmail" type="text" value="' .$user. '" />'; ?>
